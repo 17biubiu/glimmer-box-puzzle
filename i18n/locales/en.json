@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "siteTitle": "Glimmer Memory Box · Pet Box Puzzle",
+    "siteDescription": "Guide your pet pal and push the glowing memory boxes into the starlit spots in this cozy 3D box-pushing puzzle game.",
+    "homeTitle": "Glimmer Memory Box · Pet Box Puzzle",
+    "selectTitle": "Level Select · Pet Box Puzzle",
+    "playTitle": "Playing · Pet Box Puzzle"
+  },
+  "language": {
+    "label": "Language",
+    "switcherAria": "Switch language",
+    "names": {
+      "zh": "简体中文",
+      "en": "English",
+      "ja": "日本語",
+      "fr": "Français",
+      "de": "Deutsch"
+    },
+    "shorts": {
+      "zh": "中",
+      "en": "EN",
+      "ja": "日",
+      "fr": "FR",
+      "de": "DE"
+    }
+  },
+  "common": {
+    "portions": "{count} portions",
+    "stars": "{count} stars",
+    "clearedFraction": "{cleared} / {total}",
+    "stageBoxes": "{stage} · {count} boxes",
+    "placedFraction": "{placed} / {total} placed",
+    "backHome": "← Back Home",
+    "reload": "Reload",
+    "continueGame": "Continue",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "pets": {
+    "cat": { "name": "Cat", "food": "Fish Treats" },
+    "dog": { "name": "Dog", "food": "Dog Biscuits" },
+    "rabbit": { "name": "Rabbit", "food": "Timothy Hay" },
+    "lizard": { "name": "Lizard", "food": "Bug Snacks" }
+  },
+  "packs": {
+    "tutorial": { "name": "Tutorial", "desc": "Learn the basics of box pushing" },
+    "easy": { "name": "Easy", "desc": "A relaxed start with light puzzle thinking" },
+    "medium": { "name": "Medium", "desc": "A bit more planning goes a long way" },
+    "hard": { "name": "Hard", "desc": "Trials for true box-pushing masters" }
+  },
+  "stages": {
+    "起步": "Starter",
+    "进阶": "Advanced",
+    "挑战": "Challenge"
+  },
+  "home": {
+    "title": "Glimmer Memory Box\nPet Box Puzzle",
+    "subtitle": "Help your little companion push the boxes into the starlight",
+    "choosePet": "Choose Your Companion",
+    "choosePack": "Choose Difficulty",
+    "packProgress": "Cleared {cleared} / {total}",
+    "siteLink": "Visit the main website →"
+  },
+  "select": {
+    "title": "Choose a Level",
+    "progression": "Progresses from Starter → Advanced → Challenge",
+    "locked": "Clear the previous level to unlock",
+    "levelAria": "Level {num} {name}, {stage}{locked}",
+    "lockedSuffix": ", clear the previous level to unlock"
+  },
+  "play": {
+    "loadFailed": "Failed to load level: {message}",
+    "blockedBox": "There is no space ahead. Try circling to the other side of the box.",
+    "blockedWall": "That is a wall. Try another direction.",
+    "boxPlaced": "Box placed!",
+    "undoDone": "Undid one move",
+    "tipsLoadFailed": "Tips are unavailable right now. Please try again in a moment.",
+    "header": "{pet} {pack} · Level {num} “{level}”",
+    "steps": "🐾 Steps {moves}",
+    "stepsWithPar": "🐾 Steps {moves} / 3★≤{par}",
+    "pushes": "📦 Pushes {count}",
+    "undo": "↩️ Undo {left}/4",
+    "restart": "🔄 Restart",
+    "soundOn": "Turn sound on",
+    "soundOff": "Mute",
+    "tips": "Tips",
+    "select": "🗺️ Levels",
+    "status": "{stage} · {placed} / {total} placed",
+    "defaultHint": "Use arrow keys / WASD / swipe to move, and Z to undo. Boxes can only be pushed, never pulled.",
+    "boardAria": "Puzzle board. Use arrow keys or the direction buttons below to move.",
+    "loading": "✨ Loading the memory boxes…",
+    "foodBalance": "{emoji} {food} {count}",
+    "dpad": "Direction controls",
+    "up": "Up",
+    "left": "Left",
+    "down": "Down",
+    "right": "Right",
+    "winDialog": "Clear Rewards",
+    "winTitle": "The memory boxes are shining!",
+    "grandSlam": "👑 Legendary clear! You earned 3 stars in all {count} difficulty packs. You are a true box-pushing master!",
+    "packPerfect": "🏆 Congratulations! Every level in “{pack}” now has 3 stars!",
+    "best": "🏆 Best {moves} steps / {pushes} pushes",
+    "next": "Next Level →",
+    "replay": "Replay Level",
+    "restartDialog": "Restart Level",
+    "restartTitle": "Restart this level?",
+    "restartHint": "Your current {moves} steps will reset, but earned stars and food stay with you.",
+    "confirmRestart": "Restart Now"
+  },
+  "reward": {
+    "aria": "Pet food rewards",
+    "earned": "{pet} earned {count} {food}",
+    "retry": "{pet} is ready for another challenge with you",
+    "bag": "Food bag: {total} · Each pet can earn up to 3 rewards per level",
+    "claimed": "This reward was already claimed. Earn a higher star rank to get the difference."
+  },
+  "knowledge": {
+    "dialog": "Memory Tip Card",
+    "badge": "🕯️ Memory Tip Card",
+    "cta": "Visit the main website to learn more →",
+    "continue": "Continue",
+    "hint": "The board is paused. Close this card to resume your progress.",
+    "entries": [
+      {
+        "title": "What is a memorial glass stone?",
+        "text": "It is a keepsake material made by fusing cremation ash into a glass-like form. Before ordering, review the process, material notes, and provider credentials."
+      },
+      {
+        "title": "How should a hair keepsake necklace be stored?",
+        "text": "Hair keepsakes rely on dry, sealed storage. Avoid wearing them while bathing or swimming, and store them away from heat and direct sunlight."
+      },
+      {
+        "title": "Is grief after losing a pet normal?",
+        "text": "Yes. Sadness, guilt, emptiness, and fatigue are all common grief responses after losing a beloved companion."
+      },
+      {
+        "title": "How can I explain a pet loss to a child?",
+        "text": "Use gentle and direct words, avoid confusing phrases like “went to sleep,” and let the child share feelings at their own pace."
+      },
+      {
+        "title": "What cremation options are common?",
+        "text": "Private cremation usually returns ashes, while communal cremation usually does not. Ask for a clear process before deciding."
+      },
+      {
+        "title": "What does “Rainbow Bridge” mean?",
+        "text": "Rainbow Bridge is a comforting image many people use to speak about remembrance, reunion, and hope after a pet passes away."
+      },
+      {
+        "title": "When should I sort my pet’s belongings?",
+        "text": "There is no rush. You can store everything first and come back later when you feel ready to choose what to keep."
+      },
+      {
+        "title": "What is grief counseling?",
+        "text": "Grief counseling offers professional support for coping with loss. It can help when sorrow keeps affecting sleep, work, or daily life."
+      }
+    ]
+  },
+  "levels": {
+    "彩虹": "Rainbow",
+    "茶烟": "Tea Mist",
+    "蝉鸣": "Cicadas",
+    "晨曦": "Morning Glow",
+    "初雪": "First Snow",
+    "船歌": "Boat Song",
+    "窗棂": "Window Lattice",
+    "从上往下推": "Push Downward",
+    "大师收官": "Master Finale",
+    "灯塔": "Lighthouse",
+    "渡口": "Ferry Dock",
+    "断桥": "Broken Bridge",
+    "繁星": "Starfield",
+    "风车": "Windmill",
+    "封口顺序": "Seal Order",
+    "港湾": "Harbor",
+    "阁楼": "Attic",
+    "广场": "Square",
+    "候鸟": "Migrating Birds",
+    "花海": "Sea of Flowers",
+    "花园": "Garden",
+    "画卷": "Scroll",
+    "环路交换": "Loop Exchange",
+    "回廊": "Corridor Loop",
+    "回字工坊": "Maze Workshop",
+    "交错货仓": "Crossed Warehouse",
+    "阶梯": "Stairway",
+    "口袋": "Pocket",
+    "涟漪": "Ripples",
+    "两个宝盒": "Two Boxes",
+    "铃铛": "Bell",
+    "留出退路": "Leave a Way Back",
+    "流水": "Flowing Water",
+    "露珠": "Dewdrop",
+    "落叶": "Fallen Leaves",
+    "麦田": "Wheat Field",
+    "明月": "Bright Moon",
+    "暮色": "Twilight",
+    "嫩芽": "Sprout",
+    "暖阳": "Warm Sun",
+    "棋局": "Board Match",
+    "琴声": "Zither Song",
+    "清风": "Breeze",
+    "绕到箱子后面": "Circle Behind the Box",
+    "三星连珠": "Triple Stars",
+    "沙滩": "Beach",
+    "山丘": "Hill",
+    "深巷搬运": "Deep Alley Haul",
+    "石径": "Stone Path",
+    "书页": "Book Pages",
+    "竖井搬运": "Shaft Haul",
+    "双门调度": "Twin Gate Routing",
+    "双子星": "Twin Stars",
+    "四宝归位": "Four Boxes Home",
+    "松林": "Pine Woods",
+    "苔痕": "Moss Marks",
+    "糖果": "Candy",
+    "庭院": "Courtyard",
+    "晚霞": "Sunset Glow",
+    "往前推": "Push Forward",
+    "微光": "Glimmer",
+    "微光大厅": "Glimmer Hall",
+    "溪谷": "Valley Stream",
+    "先退后进": "Step Back First",
+    "小桥": "Little Bridge",
+    "信笺": "Letter",
+    "星空": "Starry Sky",
+    "星愿": "Star Wish",
+    "檐角": "Eaves",
+    "萤火": "Fireflies",
+    "月台": "Moon Platform",
+    "云朵": "Clouds",
+    "窄巷借位": "Narrow Alley Pivot",
+    "长征": "Long March",
+    "竹林": "Bamboo Grove",
+    "转角让行": "Corner Yield",
+    "走廊": "Hallway",
+    "最后一格": "Last Tile",
+    "左右开弓": "Both Sides"
+  }
+}

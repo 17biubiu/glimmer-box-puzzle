@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "siteTitle": "Boîte Souvenir Étincelante · Puzzle des Boîtes",
+    "siteDescription": "Aidez votre petit compagnon à pousser les boîtes souvenirs lumineuses jusqu’aux cases étoilées dans ce doux jeu de puzzle 3D.",
+    "homeTitle": "Boîte Souvenir Étincelante · Puzzle des Boîtes",
+    "selectTitle": "Choix du niveau · Puzzle des Boîtes",
+    "playTitle": "En jeu · Puzzle des Boîtes"
+  },
+  "language": {
+    "label": "Langue",
+    "switcherAria": "Changer de langue",
+    "names": {
+      "zh": "简体中文",
+      "en": "English",
+      "ja": "日本語",
+      "fr": "Français",
+      "de": "Deutsch"
+    },
+    "shorts": {
+      "zh": "中",
+      "en": "EN",
+      "ja": "日",
+      "fr": "FR",
+      "de": "DE"
+    }
+  },
+  "common": {
+    "portions": "{count} portions",
+    "stars": "{count} étoiles",
+    "clearedFraction": "{cleared} / {total}",
+    "stageBoxes": "{stage} · {count} caisses",
+    "placedFraction": "{placed} / {total} placées",
+    "backHome": "← Retour à l’accueil",
+    "reload": "Recharger",
+    "continueGame": "Continuer",
+    "confirm": "Confirmer",
+    "cancel": "Annuler"
+  },
+  "pets": {
+    "cat": { "name": "Chat", "food": "Friandises au poisson" },
+    "dog": { "name": "Chien", "food": "Biscuits pour chien" },
+    "rabbit": { "name": "Lapin", "food": "Foin de fléole" },
+    "lizard": { "name": "Lézard", "food": "Friandises d’insectes" }
+  },
+  "packs": {
+    "tutorial": { "name": "Tutoriel", "desc": "Apprendre les bases du pousse-caisse" },
+    "easy": { "name": "Facile", "desc": "Un départ léger pour se mettre en route" },
+    "medium": { "name": "Moyen", "desc": "Un peu plus de stratégie sera utile" },
+    "hard": { "name": "Difficile", "desc": "Des épreuves pour les vrais maîtres du pousse-boîte" }
+  },
+  "stages": {
+    "起步": "Début",
+    "进阶": "Progression",
+    "挑战": "Défi"
+  },
+  "home": {
+    "title": "Boîte Souvenir Étincelante\nPuzzle des Boîtes",
+    "subtitle": "Aidez votre petit compagnon à pousser les boîtes jusque dans la lumière des étoiles",
+    "choosePet": "Choisissez votre compagnon",
+    "choosePack": "Choisissez la difficulté",
+    "packProgress": "Terminé {cleared} / {total}",
+    "siteLink": "Visiter le site principal →"
+  },
+  "select": {
+    "title": "Choisir un niveau",
+    "progression": "Progression de Début → Progression → Défi",
+    "locked": "Débloqué après le niveau précédent",
+    "levelAria": "Niveau {num} {name}, {stage}{locked}",
+    "lockedSuffix": ", débloqué après le niveau précédent"
+  },
+  "play": {
+    "loadFailed": "Échec du chargement du niveau : {message}",
+    "blockedBox": "Il n’y a pas de place devant. Essayez de contourner la caisse par l’autre côté.",
+    "blockedWall": "C’est un mur. Essayez une autre direction.",
+    "boxPlaced": "Boîte placée !",
+    "undoDone": "Un mouvement annulé",
+    "tipsLoadFailed": "Les astuces sont indisponibles pour le moment. Réessayez dans un instant.",
+    "header": "{pet} {pack} · Niveau {num} « {level} »",
+    "steps": "🐾 Pas {moves}",
+    "stepsWithPar": "🐾 Pas {moves} / 3★≤{par}",
+    "pushes": "📦 Poussées {count}",
+    "undo": "↩️ Annuler {left}/4",
+    "restart": "🔄 Recommencer",
+    "soundOn": "Activer le son",
+    "soundOff": "Couper le son",
+    "tips": "Astuces",
+    "select": "🗺️ Niveaux",
+    "status": "{stage} · {placed} / {total} placées",
+    "defaultHint": "Déplacez-vous avec les flèches / WASD / glissement, et Z pour annuler. Les caisses peuvent être poussées, jamais tirées.",
+    "boardAria": "Plateau du puzzle. Utilisez les flèches ou les boutons de direction ci-dessous pour bouger.",
+    "loading": "✨ Chargement des boîtes souvenirs…",
+    "foodBalance": "{emoji} {food} {count}",
+    "dpad": "Contrôles directionnels",
+    "up": "Haut",
+    "left": "Gauche",
+    "down": "Bas",
+    "right": "Droite",
+    "winDialog": "Récompenses",
+    "winTitle": "Les boîtes souvenirs brillent de mille feux !",
+    "grandSlam": "👑 Exploit légendaire ! Vous avez obtenu 3 étoiles dans les {count} packs de difficulté. Vous êtes un maître du pousse-boîte !",
+    "packPerfect": "🏆 Bravo ! Tous les niveaux du pack « {pack} » ont maintenant 3 étoiles !",
+    "best": "🏆 Meilleur score {moves} pas / {pushes} poussées",
+    "next": "Niveau suivant →",
+    "replay": "Rejouer ce niveau",
+    "restartDialog": "Recommencer le niveau",
+    "restartTitle": "Recommencer ce niveau ?",
+    "restartHint": "Vos {moves} pas actuels seront remis à zéro, mais les étoiles et récompenses déjà obtenues seront conservées.",
+    "confirmRestart": "Confirmer"
+  },
+  "reward": {
+    "aria": "Récompenses de nourriture",
+    "earned": "{pet} a reçu {count} {food}",
+    "retry": "{pet} est prêt à relever encore un défi avec vous",
+    "bag": "Sac de nourriture : {total} · Chaque animal peut gagner jusqu’à 3 récompenses par niveau",
+    "claimed": "Cette récompense a déjà été récupérée. Obtenez une meilleure note pour toucher la différence."
+  },
+  "knowledge": {
+    "dialog": "Carte Mémo",
+    "badge": "🕯️ Carte Mémo",
+    "cta": "Visiter le site principal pour en savoir plus →",
+    "continue": "Continuer",
+    "hint": "Le plateau est en pause. Fermez cette carte pour reprendre votre progression.",
+    "entries": [
+      {
+        "title": "Qu’est-ce qu’une pierre souvenir en verre ?",
+        "text": "C’est un objet mémoriel obtenu en fusionnant des cendres dans une matière vitreuse. Avant de commander, vérifiez la méthode et le sérieux du prestataire."
+      },
+      {
+        "title": "Comment conserver un collier souvenir avec des poils ?",
+        "text": "Le plus important est l’étanchéité et la sécheresse. Évitez l’eau, la chaleur, et gardez-le à l’abri de la lumière directe."
+      },
+      {
+        "title": "Le chagrin après la perte d’un animal est-il normal ?",
+        "text": "Oui. La tristesse, le vide et la culpabilité sont des réactions fréquentes après la perte d’un compagnon aimé."
+      },
+      {
+        "title": "Comment parler de cette perte à un enfant ?",
+        "text": "Utilisez des mots simples et doux, sans euphémismes trompeurs, et laissez l’enfant exprimer ses émotions librement."
+      },
+      {
+        "title": "Quelles formes de crémation existent ?",
+        "text": "La crémation individuelle permet souvent de récupérer les cendres, tandis que la crémation collective ne le permet généralement pas."
+      },
+      {
+        "title": "Que signifie le « Pont arc-en-ciel » ?",
+        "text": "C’est une image réconfortante utilisée pour parler du souvenir, de l’amour durable et de l’espoir de retrouvailles."
+      },
+      {
+        "title": "Quand trier les affaires de son animal ?",
+        "text": "Il n’y a pas d’urgence. Vous pouvez tout ranger d’abord et décider plus tard, quand vous vous sentirez prêt."
+      },
+      {
+        "title": "Qu’est-ce que l’accompagnement du deuil ?",
+        "text": "Il s’agit d’un soutien pour mieux traverser la perte. Consulter un professionnel peut aider si le chagrin devient trop lourd au quotidien."
+      }
+    ]
+  },
+  "levels": {
+    "彩虹": "Arc-en-ciel",
+    "茶烟": "Brume de thé",
+    "蝉鸣": "Chant des cigales",
+    "晨曦": "Lueur du matin",
+    "初雪": "Première neige",
+    "船歌": "Barcarolle",
+    "窗棂": "Treillis de fenêtre",
+    "从上往下推": "Pousser vers le bas",
+    "大师收官": "Final de maître",
+    "灯塔": "Phare",
+    "渡口": "Embarcadère",
+    "断桥": "Pont brisé",
+    "繁星": "Ciel étoilé",
+    "风车": "Moulin à vent",
+    "封口顺序": "Ordre de fermeture",
+    "港湾": "Port",
+    "阁楼": "Grenier",
+    "广场": "Place",
+    "候鸟": "Oiseaux migrateurs",
+    "花海": "Mer de fleurs",
+    "花园": "Jardin",
+    "画卷": "Parchemin",
+    "环路交换": "Échange en boucle",
+    "回廊": "Galerie",
+    "回字工坊": "Atelier en boucle",
+    "交错货仓": "Entrepôt croisé",
+    "阶梯": "Escalier",
+    "口袋": "Poche",
+    "涟漪": "Ondes",
+    "两个宝盒": "Deux boîtes",
+    "铃铛": "Clochette",
+    "留出退路": "Laisser une sortie",
+    "流水": "Eau courante",
+    "露珠": "Rosée",
+    "落叶": "Feuilles mortes",
+    "麦田": "Champ de blé",
+    "明月": "Lune claire",
+    "暮色": "Crépuscule",
+    "嫩芽": "Jeune pousse",
+    "暖阳": "Soleil doux",
+    "棋局": "Partie d’échecs",
+    "琴声": "Mélodie de cithare",
+    "清风": "Brise légère",
+    "绕到箱子后面": "Passer derrière la caisse",
+    "三星连珠": "Triple étoile",
+    "沙滩": "Plage",
+    "山丘": "Colline",
+    "深巷搬运": "Transport en ruelle profonde",
+    "石径": "Sentier de pierre",
+    "书页": "Pages",
+    "竖井搬运": "Transport vertical",
+    "双门调度": "Manœuvre à double porte",
+    "双子星": "Étoiles jumelles",
+    "四宝归位": "Quatre boîtes en place",
+    "松林": "Pinède",
+    "苔痕": "Traces de mousse",
+    "糖果": "Bonbon",
+    "庭院": "Cour",
+    "晚霞": "Lueur du soir",
+    "往前推": "Pousser devant",
+    "微光": "Faible lueur",
+    "微光大厅": "Grand hall étincelant",
+    "溪谷": "Vallée du ruisseau",
+    "先退后进": "Reculer avant d’avancer",
+    "小桥": "Petit pont",
+    "信笺": "Lettre",
+    "星空": "Ciel nocturne",
+    "星愿": "Vœu d’étoile",
+    "檐角": "Angle du toit",
+    "萤火": "Lucioles",
+    "月台": "Plateforme lunaire",
+    "云朵": "Nuages",
+    "窄巷借位": "Manœuvre en ruelle étroite",
+    "长征": "Longue marche",
+    "竹林": "Bambouseraie",
+    "转角让行": "Passage au coin",
+    "走廊": "Couloir",
+    "最后一格": "Dernière case",
+    "左右开弓": "Des deux côtés"
+  }
+}

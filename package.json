@@ -1,0 +1,32 @@
+{
+  "name": "glimmer-box-puzzle",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "clean": "powershell -NoProfile -Command \"$paths = '.nuxt','.output','.tmp'; foreach ($path in $paths) { if (Test-Path $path) { Remove-Item -Recurse -Force $path } }\"",
+    "dev": "nuxt dev",
+    "dev:clean": "npm run clean && npm run dev",
+    "dev:host": "nuxt dev --host 0.0.0.0",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "test": "node scripts/run-checks.mjs",
+    "test:levels": "node scripts/run-checks.mjs --levels",
+    "test:ui": "playwright test",
+    "typecheck": "nuxt prepare && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^9.5.6",
+    "nuxt": "^3.15.4",
+    "three": "^0.172.0",
+    "vue": "^3.5.13",
+    "vue-i18n": "^10.0.8",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/three": "^0.172.0",
+    "typescript": "^5.7.3",
+    "vue-tsc": "^3.3.11"
+  }
+}

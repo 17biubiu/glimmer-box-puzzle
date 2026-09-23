@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "siteTitle": "Leuchtende Erinnerungsbox · Haustier-Boxrätsel",
+    "siteDescription": "Hilf deinem kleinen Begleiter, die leuchtenden Erinnerungsboxen in die Sternenfelder zu schieben, in diesem liebevollen 3D-Boxrätsel.",
+    "homeTitle": "Leuchtende Erinnerungsbox · Haustier-Boxrätsel",
+    "selectTitle": "Levelauswahl · Haustier-Boxrätsel",
+    "playTitle": "Im Spiel · Haustier-Boxrätsel"
+  },
+  "language": {
+    "label": "Sprache",
+    "switcherAria": "Sprache wechseln",
+    "names": {
+      "zh": "简体中文",
+      "en": "English",
+      "ja": "日本語",
+      "fr": "Français",
+      "de": "Deutsch"
+    },
+    "shorts": {
+      "zh": "中",
+      "en": "EN",
+      "ja": "日",
+      "fr": "FR",
+      "de": "DE"
+    }
+  },
+  "common": {
+    "portions": "{count} Portionen",
+    "stars": "{count} Sterne",
+    "clearedFraction": "{cleared} / {total}",
+    "stageBoxes": "{stage} · {count} Kisten",
+    "placedFraction": "{placed} / {total} platziert",
+    "backHome": "← Zur Startseite",
+    "reload": "Neu laden",
+    "continueGame": "Weiterspielen",
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen"
+  },
+  "pets": {
+    "cat": { "name": "Katze", "food": "Fischsnacks" },
+    "dog": { "name": "Hund", "food": "Hundekekse" },
+    "rabbit": { "name": "Kaninchen", "food": "Timothy-Heu" },
+    "lizard": { "name": "Eidechse", "food": "Insektensnacks" }
+  },
+  "packs": {
+    "tutorial": { "name": "Tutorial", "desc": "Die Grundlagen des Kistenschiebens lernen" },
+    "easy": { "name": "Leicht", "desc": "Ein entspannter Start zum Mitdenken" },
+    "medium": { "name": "Mittel", "desc": "Etwas mehr Planung bringt dich weiter" },
+    "hard": { "name": "Schwer", "desc": "Prüfungen für echte Boxrätsel-Meister" }
+  },
+  "stages": {
+    "起步": "Einstieg",
+    "进阶": "Fortgeschritten",
+    "挑战": "Herausforderung"
+  },
+  "home": {
+    "title": "Leuchtende Erinnerungsbox\nHaustier-Boxrätsel",
+    "subtitle": "Hilf deinem kleinen Gefährten, die Boxen ins Sternenlicht zu schieben",
+    "choosePet": "Wähle deinen Begleiter",
+    "choosePack": "Wähle den Schwierigkeitsgrad",
+    "packProgress": "Geschafft {cleared} / {total}",
+    "siteLink": "Zur Hauptwebsite →"
+  },
+  "select": {
+    "title": "Level wählen",
+    "progression": "Verlauf von Einstieg → Fortgeschritten → Herausforderung",
+    "locked": "Schließe das vorherige Level ab, um freizuschalten",
+    "levelAria": "Level {num} {name}, {stage}{locked}",
+    "lockedSuffix": ", schließe das vorherige Level ab, um freizuschalten"
+  },
+  "play": {
+    "loadFailed": "Level konnte nicht geladen werden: {message}",
+    "blockedBox": "Davor ist kein Platz. Versuche, auf die andere Seite der Kiste zu gelangen.",
+    "blockedWall": "Dort ist eine Wand. Probiere eine andere Richtung.",
+    "boxPlaced": "Box platziert!",
+    "undoDone": "Einen Zug rückgängig gemacht",
+    "tipsLoadFailed": "Tipps sind gerade nicht verfügbar. Bitte versuche es gleich noch einmal.",
+    "header": "{pet} {pack} · Level {num} „{level}“",
+    "steps": "🐾 Schritte {moves}",
+    "stepsWithPar": "🐾 Schritte {moves} / 3★≤{par}",
+    "pushes": "📦 Schübe {count}",
+    "undo": "↩️ Rückgängig {left}/4",
+    "restart": "🔄 Neustart",
+    "soundOn": "Ton einschalten",
+    "soundOff": "Stumm",
+    "tips": "Tipps",
+    "select": "🗺️ Level",
+    "status": "{stage} · {placed} / {total} platziert",
+    "defaultHint": "Bewege dich mit Pfeiltasten / WASD / Wischen und drücke Z zum Rückgängigmachen. Kisten können nur geschoben, nicht gezogen werden.",
+    "boardAria": "Rätselbrett. Nutze die Pfeiltasten oder die Richtungstasten darunter zum Bewegen.",
+    "loading": "✨ Erinnerungsboxen werden geladen…",
+    "foodBalance": "{emoji} {food} {count}",
+    "dpad": "Richtungssteuerung",
+    "up": "Hoch",
+    "left": "Links",
+    "down": "Runter",
+    "right": "Rechts",
+    "winDialog": "Belohnungen",
+    "winTitle": "Die Erinnerungsboxen strahlen hell!",
+    "grandSlam": "👑 Legendärer Abschluss! Du hast in allen {count} Schwierigkeits-Paketen 3 Sterne geholt. Du bist ein echter Boxrätsel-Meister!",
+    "packPerfect": "🏆 Glückwunsch! Alle Level im Paket „{pack}“ haben jetzt 3 Sterne!",
+    "best": "🏆 Beste Leistung {moves} Schritte / {pushes} Schübe",
+    "next": "Nächstes Level →",
+    "replay": "Level erneut spielen",
+    "restartDialog": "Level neu starten",
+    "restartTitle": "Dieses Level neu starten?",
+    "restartHint": "Deine aktuellen {moves} Schritte werden zurückgesetzt, aber verdiente Sterne und Futter bleiben erhalten.",
+    "confirmRestart": "Neu starten"
+  },
+  "reward": {
+    "aria": "Futterbelohnungen",
+    "earned": "{pet} hat {count} {food} bekommen",
+    "retry": "{pet} ist bereit für eine weitere Herausforderung mit dir",
+    "bag": "Futterbeutel: {total} · Jedes Haustier kann pro Level bis zu 3 Belohnungen erhalten",
+    "claimed": "Diese Belohnung wurde bereits erhalten. Mit einer besseren Sternwertung bekommst du die Differenz."
+  },
+  "knowledge": {
+    "dialog": "Erinnerungskarte",
+    "badge": "🕯️ Erinnerungskarte",
+    "cta": "Mehr auf der Hauptwebsite →",
+    "continue": "Weiterspielen",
+    "hint": "Das Brett ist pausiert. Schließe diese Karte, um deinen Fortschritt fortzusetzen.",
+    "entries": [
+      {
+        "title": "Was ist ein Erinnerungsstein aus Glas?",
+        "text": "Dabei werden Kremationsasche und Glasmaterial zu einem kleinen Erinnerungsstück verarbeitet. Vor der Bestellung lohnt sich ein Blick auf Verfahren und Anbieter."
+      },
+      {
+        "title": "Wie bewahrt man ein Haar-Andenken sicher auf?",
+        "text": "Wichtig sind trockene Lagerung und gute Versiegelung. Beim Duschen oder Schwimmen sollte der Schmuck nicht getragen werden."
+      },
+      {
+        "title": "Ist Trauer nach dem Verlust eines Haustiers normal?",
+        "text": "Ja. Traurigkeit, Schuldgefühle und Leere sind häufige Reaktionen, wenn ein enges Tiermitglied fehlt."
+      },
+      {
+        "title": "Wie erklärt man Kindern den Verlust?",
+        "text": "Am besten mit klaren und sanften Worten. Vermeiden Sie missverständliche Formulierungen wie „eingeschlafen“."
+      },
+      {
+        "title": "Welche Einäscherungsformen gibt es?",
+        "text": "Bei der Einzeleinäscherung werden die Asche meist zurückgegeben, bei der Sammeleinäscherung in der Regel nicht."
+      },
+      {
+        "title": "Was bedeutet die „Regenbogenbrücke“?",
+        "text": "Die Regenbogenbrücke ist ein tröstliches Bild für Erinnerung, Liebe und die Hoffnung auf ein Wiedersehen."
+      },
+      {
+        "title": "Wann sollte man die Sachen des Tieres sortieren?",
+        "text": "Es gibt keinen Zeitdruck. Man kann alles zuerst sicher verstauen und später in Ruhe entscheiden, was bleiben soll."
+      },
+      {
+        "title": "Was ist Trauerbegleitung?",
+        "text": "Trauerbegleitung unterstützt Menschen nach einem Verlust. Sie kann helfen, wenn Schlaf, Alltag oder Arbeit länger stark beeinträchtigt sind."
+      }
+    ]
+  },
+  "levels": {
+    "彩虹": "Regenbogen",
+    "茶烟": "Teedunst",
+    "蝉鸣": "Zikadenklang",
+    "晨曦": "Morgenglanz",
+    "初雪": "Erster Schnee",
+    "船歌": "Bootslied",
+    "窗棂": "Fenstergitter",
+    "从上往下推": "Nach unten schieben",
+    "大师收官": "Meisterfinale",
+    "灯塔": "Leuchtturm",
+    "渡口": "Anlegestelle",
+    "断桥": "Gebrochene Brücke",
+    "繁星": "Sternenmeer",
+    "风车": "Windmühle",
+    "封口顺序": "Reihenfolge des Verschließens",
+    "港湾": "Hafen",
+    "阁楼": "Dachboden",
+    "广场": "Platz",
+    "候鸟": "Zugvögel",
+    "花海": "Blütenmeer",
+    "花园": "Garten",
+    "画卷": "Bildrolle",
+    "环路交换": "Schleifentausch",
+    "回廊": "Galerie",
+    "回字工坊": "Werkstatt im Kreis",
+    "交错货仓": "Verschränktes Lager",
+    "阶梯": "Treppe",
+    "口袋": "Tasche",
+    "涟漪": "Wellenringe",
+    "两个宝盒": "Zwei Boxen",
+    "铃铛": "Glöckchen",
+    "留出退路": "Rückweg freilassen",
+    "流水": "Fließendes Wasser",
+    "露珠": "Tautropfen",
+    "落叶": "Fallende Blätter",
+    "麦田": "Weizenfeld",
+    "明月": "Heller Mond",
+    "暮色": "Abenddämmerung",
+    "嫩芽": "Keimling",
+    "暖阳": "Warme Sonne",
+    "棋局": "Spielbrett",
+    "琴声": "Saitenklang",
+    "清风": "Leichte Brise",
+    "绕到箱子后面": "Hinter die Kiste gehen",
+    "三星连珠": "Dreifachstern",
+    "沙滩": "Strand",
+    "山丘": "Hügel",
+    "深巷搬运": "Transport in tiefer Gasse",
+    "石径": "Steinpfad",
+    "书页": "Buchseiten",
+    "竖井搬运": "Schachttransport",
+    "双门调度": "Doppeltor-Steuerung",
+    "双子星": "Zwillingssterne",
+    "四宝归位": "Vier Boxen am Ziel",
+    "松林": "Kiefernwald",
+    "苔痕": "Moosspuren",
+    "糖果": "Bonbon",
+    "庭院": "Innenhof",
+    "晚霞": "Abendrot",
+    "往前推": "Vorwärtsschieben",
+    "微光": "Schimmer",
+    "微光大厅": "Schimmerhalle",
+    "溪谷": "Bachtal",
+    "先退后进": "Erst zurück, dann vor",
+    "小桥": "Kleine Brücke",
+    "信笺": "Brief",
+    "星空": "Sternenhimmel",
+    "星愿": "Sternenwunsch",
+    "檐角": "Dachkante",
+    "萤火": "Glühwürmchen",
+    "月台": "Mondplattform",
+    "云朵": "Wolken",
+    "窄巷借位": "Schmale Gassen-Manöver",
+    "长征": "Langer Marsch",
+    "竹林": "Bambushain",
+    "转角让行": "Vorfahrt an der Ecke",
+    "走廊": "Flur",
+    "最后一格": "Letztes Feld",
+    "左右开弓": "Beide Seiten"
+  }
+}
