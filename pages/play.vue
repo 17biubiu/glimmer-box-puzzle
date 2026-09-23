@@ -415,6 +415,8 @@ onBeforeUnmount(() => {
           <div class="game-controls-meta-top">
             <LocaleSwitcher inline compact />
             <span class="food-balance">{{ petInfo.foodEmoji }} {{ petInfo.food }} {{ t('common.portions', { count: save.food[save.pet] }) }}</span>
+          </div>
+          <div class="game-controls-meta-bottom">
             <span class="game-controls-link-group">
               <span class="game-controls-link-label">links:</span>
               <a class="site-entry-text" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">paw &amp; ever</a>
