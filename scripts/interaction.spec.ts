@@ -78,6 +78,7 @@ test('all pets receive their own food, reload persists it and replay grants no d
     await expect(dialog).toBeVisible()
     await expect(dialog).toContainText(`${pet}获得 3 份${food}`)
     await expect(dialog.getByRole('button', { name: '下一关 →' })).toBeVisible()
+    await expect(dialog.getByRole('button', { name: '下一关 →' })).toBeFocused()
     await page.keyboard.press('ArrowLeft')
     await expect(moves(page)).toContainText('步数 1')
     if (pet === '小猫') {

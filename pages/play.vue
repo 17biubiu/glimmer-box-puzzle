@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, shallowRef, computed, onMounted, onBeforeUnmount, watch } from 'vue'
+import { ref, shallowRef, computed, nextTick, onMounted, onBeforeUnmount, watch } from 'vue'
 import { SokobanEngine } from '~/game/core/engine'
 import { parseXsb, parseXsbSet } from '~/game/core/xsb-parser'
 import { findLevel, nextLevel } from '~/game/core/levels'
@@ -42,6 +42,8 @@ const showRestart = shallowRef(false)
 const rewardEarned = shallowRef(0)
 const feedback = shallowRef('')
 const placed = shallowRef(0)
+const winReplayButton = ref<HTMLButtonElement | null>(null)
+const winNextButton = ref<HTMLButtonElement | null>(null)
 const tipLoading = shallowRef(false)
 const knowledgeEntry = ref<{ title: string; text: string } | null>(null)
 // 成就庆祝：本次通关是否首次达成「全包 3★」/「全游戏大满贯」
@@ -277,6 +279,15 @@ function goNext() {
   router.replace({ path: '/play', query: { pack: nextMeta.value.pack, num: String(nextMeta.value.num) } })
 }
 
+watch(showWin, visible => {
+  if (!visible) return
+  void nextTick(() => {
+    requestAnimationFrame(() => {
+      ;(winNextButton.value ?? winReplayButton.value)?.focus()
+    })
+  })
+}, { flush: 'post' })
+
 // ---- 键盘 ----
 const KEY_DIRS: Record<string, Direction> = {
   ArrowUp: 'up',
@@ -447,8 +458,8 @@ onBeforeUnmount(() => {
           <div v-if="best" class="win-stat">{{ t('play.best', { moves: best.moves, pushes: best.pushes }) }}</div>
         </div>
         <div class="win-actions">
-          <button class="btn btn-blue" @click="doRestart">{{ t('play.replay') }}</button>
-          <button v-if="nextMeta" class="btn btn-green" @click="goNext">{{ t('play.next') }}</button>
+          <button ref="winReplayButton" class="btn btn-blue" :autofocus="!nextMeta" @click="doRestart">{{ t('play.replay') }}</button>
+          <button v-if="nextMeta" ref="winNextButton" class="btn btn-green" autofocus @click="goNext">{{ t('play.next') }}</button>
           <button class="btn btn-ghost" @click="goSelect">{{ t('play.select') }}</button>
         </div>
       </div>
