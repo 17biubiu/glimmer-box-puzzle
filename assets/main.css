@@ -138,6 +138,15 @@ button:disabled {
   backdrop-filter: blur(8px);
 }
 
+.locale-switcher.inline {
+  position: static;
+  top: auto;
+  right: auto;
+  z-index: auto;
+  background: #ffffffd9;
+  backdrop-filter: none;
+}
+
 .site-entry {
   position: fixed;
   top: 14px;
@@ -157,6 +166,15 @@ button:disabled {
   font-weight: 900;
   letter-spacing: 0.02em;
   text-decoration: none;
+}
+
+.site-entry-inline {
+  position: static;
+  top: auto;
+  left: auto;
+  z-index: auto;
+  background: #ffffffd9;
+  backdrop-filter: none;
 }
 
 .site-entry:hover {
@@ -427,11 +445,24 @@ button:disabled {
 }
 .game-controls {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   gap: 16px;
   background: #e4f4fc;
   padding: 8px max(16px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+.game-controls-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.game-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .food-balance { font-size: 13px; font-weight: 700; line-height: 1.6; }
 .canvas-wrap canvas {
@@ -624,6 +655,8 @@ button:disabled {
   .hud-actions .btn-sm { padding: 5px 8px; font-size: 12px; }
   .hud-stat { font-size: 12px; padding: 4px 8px; }
   .game-status { padding: 5px 10px; font-size: 11px; }
+  .game-controls-main { flex-direction: column; align-items: stretch; gap: 10px; }
+  .game-footer-actions { justify-content: center; }
   .dialog { padding: 18px 14px; }
   .win-title { font-size: 20px; }
   .win-stars { font-size: 38px; }

@@ -69,6 +69,7 @@ export class GameScene {
   private moveVector = { x: 0, z: 0 }
   private directionMarker: THREE.Mesh | null = null
   private reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+  private coarsePointer = window.matchMedia('(pointer: coarse)')
   private boxes: BoxVisual[] = []
   private level: ParsedLevel | null = null
   private dirLight: THREE.DirectionalLight
@@ -84,8 +85,9 @@ export class GameScene {
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas
+    const perfMode = this.reducedMotion.matches || this.coarsePointer.matches
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true })
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, perfMode ? 1.35 : 1.8))
     this.renderer.shadowMap.enabled = true
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
     this.renderer.outputColorSpace = THREE.SRGBColorSpace
@@ -103,7 +105,7 @@ export class GameScene {
     this.scene.add(hemi)
     this.dirLight = new THREE.DirectionalLight(0xffffff, 1.6)
     this.dirLight.castShadow = true
-    this.dirLight.shadow.mapSize.set(1024, 1024)
+    this.dirLight.shadow.mapSize.set(perfMode ? 768 : 1024, perfMode ? 768 : 1024)
     this.dirLight.shadow.bias = -0.002
     this.scene.add(this.dirLight)
     this.scene.add(this.dirLight.target)
@@ -116,7 +118,7 @@ export class GameScene {
     this.resizeObserver = new ResizeObserver(this.resizeHandler)
     this.resizeObserver.observe(canvas)
     this.resize()
-    this.loop()
+    this.scheduleFrame()
   }
 
   /** 网格坐标 → 世界坐标 */
@@ -236,6 +238,7 @@ export class GameScene {
     this.board.add(this.directionMarker)
 
     this.frameCamera()
+    this.scheduleFrame()
   }
 
   private createBox(start: Point): BoxVisual {
@@ -348,12 +351,15 @@ export class GameScene {
       vis.glowMat.opacity = onGoal ? 0.85 : 0.55
       vis.light.color.setHex(glow)
       vis.light.intensity = onGoal ? 1.6 : 0.9
+      vis.glow.scale.setScalar(onGoal ? 1.9 : 1.55)
     })
+    this.scheduleFrame()
   }
 
   playWin(): void {
     this.winAnimating = true
     this.winTime = this.time
+    this.scheduleFrame()
   }
 
   /** 固定视角自动取景：~55° 俯视、锁定朝向、适配关卡范围 */
@@ -396,10 +402,23 @@ export class GameScene {
     const h = this.canvas.clientHeight || 1
     this.renderer.setSize(w, h, false)
     this.frameCamera()
+    this.scheduleFrame()
+  }
+
+  private hasActiveAnimation(): boolean {
+    if (this.petHopT < 1) return true
+    if (this.winAnimating && !this.reducedMotion.matches && this.time - this.winTime < 0.65) return true
+    return this.boxes.some(vis => vis.hopT < 1)
+  }
+
+  private scheduleFrame(): void {
+    if (this.raf) return
+    this.clock.getDelta()
+    this.raf = requestAnimationFrame(this.loop)
   }
 
   private loop = (): void => {
-    this.raf = requestAnimationFrame(this.loop)
+    this.raf = 0
     const dt = Math.min(this.clock.getDelta(), 0.05)
     this.time += dt
     // Fixed-duration, synchronized slides; never rotate the pet on direction changes.
@@ -429,13 +448,14 @@ export class GameScene {
       if (vis.hopT < 1) {
         vis.hopT = this.reducedMotion.matches ? 1 : Math.min(1, vis.hopT + dt / this.moveDuration)
         vis.group.position.lerpVectors(vis.from, vis.target, 1 - Math.pow(1 - vis.hopT, 2))
+        const pulse = this.reducedMotion.matches ? 0.5 : 0.5 + 0.5 * Math.sin(this.time * 2.4 + i * 1.3)
+        vis.glow.scale.setScalar(1.55 + pulse * 0.35)
       }
-      const pulse = this.reducedMotion.matches ? 0.5 : 0.5 + 0.5 * Math.sin(this.time * 2.4 + i * 1.3)
-      vis.glow.scale.setScalar(1.55 + pulse * 0.35)
       vis.group.rotation.y = 0
     }
 
     this.renderer.render(this.scene, this.camera)
+    if (this.hasActiveAnimation()) this.scheduleFrame()
   }
 
   dispose(): void {

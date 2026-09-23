@@ -15,6 +15,7 @@ const route = useRoute()
 const router = useRouter()
 const runtimeConfig = useRuntimeConfig()
 const save = useSave()
+const mainSiteUrl = 'https://www.pawandever.com/?ref=box-puzzle-play-footer'
 const {
   t,
   knowledgeEntries,
@@ -398,12 +399,18 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <div class="game-controls">
-      <span class="food-balance">{{ petInfo.foodEmoji }} {{ petInfo.food }} {{ t('common.portions', { count: save.food[save.pet] }) }}</span>
-      <div class="dpad" role="group" :aria-label="t('play.dpad')">
-        <button class="dpad-btn dpad-u" :disabled="blocked" :aria-label="t('play.up')" @click="doMove('up')">▲</button>
-        <button class="dpad-btn dpad-l" :disabled="blocked" :aria-label="t('play.left')" @click="doMove('left')">◀</button>
-        <button class="dpad-btn dpad-d" :disabled="blocked" :aria-label="t('play.down')" @click="doMove('down')">▼</button>
-        <button class="dpad-btn dpad-r" :disabled="blocked" :aria-label="t('play.right')" @click="doMove('right')">▶</button>
+      <div class="game-controls-main">
+        <span class="food-balance">{{ petInfo.foodEmoji }} {{ petInfo.food }} {{ t('common.portions', { count: save.food[save.pet] }) }}</span>
+        <div class="dpad" role="group" :aria-label="t('play.dpad')">
+          <button class="dpad-btn dpad-u" :disabled="blocked" :aria-label="t('play.up')" @click="doMove('up')">▲</button>
+          <button class="dpad-btn dpad-l" :disabled="blocked" :aria-label="t('play.left')" @click="doMove('left')">◀</button>
+          <button class="dpad-btn dpad-d" :disabled="blocked" :aria-label="t('play.down')" @click="doMove('down')">▼</button>
+          <button class="dpad-btn dpad-r" :disabled="blocked" :aria-label="t('play.right')" @click="doMove('right')">▶</button>
+        </div>
+      </div>
+      <div class="game-footer-actions">
+        <a class="site-entry site-entry-inline" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">paw &amp; ever</a>
+        <LocaleSwitcher inline />
       </div>
     </div>
 

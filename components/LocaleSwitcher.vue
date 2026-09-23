@@ -2,6 +2,12 @@
 import { shallowRef } from 'vue'
 import type { AppLocale } from '~/composables/useGameI18n'
 
+const props = withDefaults(defineProps<{
+  inline?: boolean
+}>(), {
+  inline: false,
+})
+
 const switching = shallowRef(false)
 const { locale, localeOptions, switchLocale, t } = useGameI18n()
 
@@ -17,7 +23,7 @@ async function onSwitch(code: AppLocale) {
 </script>
 
 <template>
-  <div class="locale-switcher" :aria-label="t('language.switcherAria')" role="group">
+  <div class="locale-switcher" :class="{ inline: props.inline }" :aria-label="t('language.switcherAria')" role="group">
     <button
       v-for="option in localeOptions"
       :key="option.code"
