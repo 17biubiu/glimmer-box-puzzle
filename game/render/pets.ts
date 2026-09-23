@@ -344,10 +344,9 @@ export function buildPet(kind: PetKind): THREE.Group {
   return g
 }
 
-/** Stable facing: direction is conveyed by the ground marker, not repeated spins. */
-export function posePet(pet: THREE.Group, phase: number, pushing: boolean, dx = 0, dz = 0): void {
+export function posePet(pet: THREE.Group, phase: number, pushing: boolean, facingY = 0, dx = 0, dz = 0): void {
   const effort = Math.sin(phase * Math.PI)
-  pet.rotation.set(pushing ? dz * effort * 0.065 : 0, 0, pushing ? -dx * effort * 0.065 : 0)
+  pet.rotation.set(pushing ? dz * effort * 0.065 : 0, facingY, pushing ? -dx * effort * 0.065 : 0)
   pet.scale.set(1 + (pushing ? effort * 0.025 : 0), 1 - (pushing ? effort * 0.045 : 0), 1)
   pet.children.forEach((part) => {
     if (!part.name.startsWith('paw-')) return

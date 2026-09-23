@@ -64,6 +64,8 @@ export class GameScene {
   private petTarget = new THREE.Vector3()
   private petFrom = new THREE.Vector3()
   private petHopT = 1
+  private petFacingY = 0
+  private petFacingTargetY = 0
   private pushing = false
   private moveDuration = 0.14
   private moveVector = { x: 0, z: 0 }
@@ -125,6 +127,14 @@ export class GameScene {
   private toWorld(p: Point, y = 0): THREE.Vector3 {
     const l = this.level!
     return new THREE.Vector3((p.x - (l.width - 1) / 2) * TILE, y, (p.y - (l.height - 1) / 2) * TILE)
+  }
+
+  private facingAngle(dx: number, dz: number): number {
+    return Math.atan2(dx, dz)
+  }
+
+  private updateFacingTarget(dx: number, dz: number): void {
+    this.petFacingTargetY = this.facingAngle(dx, dz)
   }
 
   /** 载入关卡并重建棋盘 */
@@ -228,7 +238,9 @@ export class GameScene {
     this.petTarget.copy(this.pet.position)
     this.petFrom.copy(this.petTarget)
     this.petHopT = 1
-    this.pet.rotation.y = 0
+    this.petFacingY = 0
+    this.petFacingTargetY = 0
+    this.pet.rotation.y = this.petFacingY
     this.board.add(this.pet)
     this.directionMarker = new THREE.Mesh(
       new THREE.ConeGeometry(0.09, 0.2, 3),
@@ -326,6 +338,7 @@ export class GameScene {
         up: { x: 0, z: -1 }, down: { x: 0, z: 1 },
         left: { x: -1, z: 0 }, right: { x: 1, z: 0 },
       }[movedDir]
+      this.updateFacingTarget(this.moveVector.x, this.moveVector.z)
       if (this.directionMarker) {
         this.directionMarker.visible = !this.reducedMotion.matches
         this.directionMarker.rotation.set(Math.PI / 2, 0, -Math.atan2(this.moveVector.x, this.moveVector.z))
@@ -333,7 +346,10 @@ export class GameScene {
     } else {
       this.petHopT = 1
       this.pet?.position.copy(this.petTarget)
-      if (this.pet) posePet(this.pet, 1, false)
+      if (this.pet) {
+        this.petFacingY = this.petFacingTargetY
+        posePet(this.pet, 1, false, this.petFacingY)
+      }
       if (this.directionMarker) this.directionMarker.visible = false
     }
     engine.boxes.forEach((b, i) => {
@@ -407,6 +423,7 @@ export class GameScene {
 
   private hasActiveAnimation(): boolean {
     if (this.petHopT < 1) return true
+    if (Math.abs(this.petFacingTargetY - this.petFacingY) > 0.001) return true
     if (this.winAnimating && !this.reducedMotion.matches && this.time - this.winTime < 0.65) return true
     return this.boxes.some(vis => vis.hopT < 1)
   }
@@ -423,15 +440,27 @@ export class GameScene {
     this.time += dt
     // Fixed-duration, synchronized slides; never rotate the pet on direction changes.
     if (this.pet) {
+      const facingDelta = Math.atan2(
+        Math.sin(this.petFacingTargetY - this.petFacingY),
+        Math.cos(this.petFacingTargetY - this.petFacingY),
+      )
+      if (Math.abs(facingDelta) > 0.001) {
+        const turnStep = this.reducedMotion.matches ? 1 : Math.min(1, dt / 0.1)
+        this.petFacingY += facingDelta * turnStep
+      } else {
+        this.petFacingY = this.petFacingTargetY
+      }
       if (this.petHopT < 1) {
         this.petHopT = this.reducedMotion.matches ? 1 : Math.min(1, this.petHopT + dt / this.moveDuration)
         const t = 1 - Math.pow(1 - this.petHopT, 2)
         this.pet.position.lerpVectors(this.petFrom, this.petTarget, t)
-        posePet(this.pet, this.petHopT, this.pushing, this.moveVector.x, this.moveVector.z)
+        posePet(this.pet, this.petHopT, this.pushing, this.petFacingY, this.moveVector.x, this.moveVector.z)
       } else if (this.winAnimating && !this.reducedMotion.matches && this.time - this.winTime < 0.65) {
         this.pet.position.y = Math.sin((this.time - this.winTime) / 0.65 * Math.PI) * 0.12
+        posePet(this.pet, 1, false, this.petFacingY)
       } else {
         this.pet.position.y = 0
+        posePet(this.pet, 1, false, this.petFacingY)
       }
       if (this.directionMarker) {
         this.directionMarker.position.copy(this.pet.position)

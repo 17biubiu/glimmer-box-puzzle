@@ -401,9 +401,14 @@ onBeforeUnmount(() => {
     <div class="game-controls">
       <div class="game-controls-main">
         <div class="game-controls-meta">
-          <a class="site-entry-text" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">paw &amp; ever</a>
-          <LocaleSwitcher inline compact />
-          <span class="food-balance">{{ petInfo.foodEmoji }} {{ petInfo.food }} {{ t('common.portions', { count: save.food[save.pet] }) }}</span>
+          <div class="game-controls-meta-top">
+            <LocaleSwitcher inline compact />
+            <span class="food-balance">{{ petInfo.foodEmoji }} {{ petInfo.food }} {{ t('common.portions', { count: save.food[save.pet] }) }}</span>
+          </div>
+          <div class="game-controls-meta-bottom">
+            <span class="game-controls-link-label">links:</span>
+            <a class="site-entry-text" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">paw &amp; ever</a>
+          </div>
         </div>
         <div class="dpad" role="group" :aria-label="t('play.dpad')">
           <button class="dpad-btn dpad-u" :disabled="blocked" :aria-label="t('play.up')" @click="doMove('up')">▲</button>
@@ -442,8 +447,8 @@ onBeforeUnmount(() => {
           <div v-if="best" class="win-stat">{{ t('play.best', { moves: best.moves, pushes: best.pushes }) }}</div>
         </div>
         <div class="win-actions">
-          <button v-if="nextMeta" class="btn btn-green" @click="goNext">{{ t('play.next') }}</button>
           <button class="btn btn-blue" @click="doRestart">{{ t('play.replay') }}</button>
+          <button v-if="nextMeta" class="btn btn-green" @click="goNext">{{ t('play.next') }}</button>
           <button class="btn btn-ghost" @click="goSelect">{{ t('play.select') }}</button>
         </div>
       </div>
