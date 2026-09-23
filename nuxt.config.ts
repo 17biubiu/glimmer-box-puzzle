@@ -2,12 +2,7 @@
 const env = ((globalThis as typeof globalThis & {
   process?: { env?: Record<string, string | undefined> }
 }).process?.env) ?? {}
-const repositoryName = env.GITHUB_REPOSITORY?.split('/')[1] ?? ''
-const githubPagesBase =
-  repositoryName && !repositoryName.endsWith('.github.io')
-    ? `/${repositoryName}/`
-    : '/'
-const baseURL = env.NUXT_APP_BASE_URL || (env.GITHUB_ACTIONS === 'true' ? githubPagesBase : '/')
+const baseURL = env.NUXT_APP_BASE_URL || '/'
 
 export default defineNuxtConfig({
   ssr: false,
