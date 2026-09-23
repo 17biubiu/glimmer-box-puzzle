@@ -6,7 +6,11 @@ const route = useRoute()
 const { t } = useGameI18n()
 const mainSiteUrl = 'https://www.pawandever.com/?ref=box-puzzle-global'
 const isPlayPage = computed(() => route.path === '/play')
-const showGlobalTopActions = computed(() => route.path !== '/' && !isPlayPage.value)
+const showGlobalTopActions = computed(() =>
+  route.path !== '/'
+  && route.path !== '/select'
+  && !isPlayPage.value,
+)
 
 useHead(() => ({
   title: t('meta.siteTitle'),

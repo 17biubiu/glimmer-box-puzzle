@@ -9,6 +9,7 @@ const route = useRoute()
 const router = useRouter()
 const save = useSave()
 const { t, localizedPacks, packInfo: getPackInfo, levelName, stageName } = useGameI18n()
+const mainSiteUrl = 'https://www.pawandever.com/?ref=box-puzzle-select'
 
 useHead(() => ({
   title: t('meta.selectTitle'),
@@ -99,5 +100,17 @@ function levelAria(num: number, name: string, stage?: string) {
     <p style="margin-top: 22px">
       <NuxtLink to="/" class="btn btn-ghost btn-sm" style="text-decoration: none">{{ t('common.backHome') }}</NuxtLink>
     </p>
+
+    <div class="home-footer-tools" aria-label="select footer tools">
+      <div class="home-footer-links">
+        <span class="home-footer-label">links</span>
+        <a class="site-entry-text" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">
+          paw &amp; ever
+        </a>
+      </div>
+      <div class="home-footer-locale">
+        <LocaleSwitcher inline compact />
+      </div>
+    </div>
   </div>
 </template>

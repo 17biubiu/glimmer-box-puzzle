@@ -457,10 +457,12 @@ button:disabled {
 
 /* ---- 游戏页 ---- */
 .play-page {
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .hud {
   display: flex;
@@ -496,8 +498,9 @@ button:disabled {
 }
 .canvas-wrap {
   position: relative;
-  flex: 1;
-  min-height: 0;
+  flex: 1 1 auto;
+  min-height: 240px;
+  background: var(--sky);
   touch-action: none;
 }
 .game-status {
@@ -513,6 +516,7 @@ button:disabled {
 .game-controls {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 12px;
   background: #e4f4fc;
   padding: 8px max(16px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
@@ -800,6 +804,10 @@ button:disabled {
 .restart-hint { line-height: 1.7; margin: 12px 0 20px; }
 
 @media (max-width: 480px) {
+  .play-page {
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
   .hud { padding: 8px; gap: 6px; }
   .hud-title { width: 100%; font-size: 13px; }
   .hud-actions { gap: 5px; }
@@ -807,6 +815,10 @@ button:disabled {
   .hud-stat { font-size: 12px; padding: 4px 8px; }
   .game-status { padding: 5px 10px; font-size: 11px; }
   .game-status-hint { display: none; }
+  .canvas-wrap {
+    flex: 0 0 auto;
+    min-height: clamp(228px, 36svh, 360px);
+  }
   .game-controls { gap: 10px; }
   .game-controls-main {
     flex-direction: column;
