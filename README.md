@@ -23,6 +23,14 @@ npm run typecheck          # Vue / TypeScript 类型检查
 npm run test:ui            # Chrome 页面交互回归
 ```
 
+## GitHub Pages 部署
+
+- 仓库已补充 `main` 分支自动部署工作流：`.github/workflows/deploy-pages.yml`
+- 触发方式：合并到 `main` 或直接 push 到 `main` 后自动构建并部署；也支持手动触发 `workflow_dispatch`
+- 构建命令：`npm run generate`
+- 默认 GitHub Pages 地址：`https://17biubiu.github.io/glimmer-box-puzzle/`
+- 首次启用时，需要在 GitHub 仓库 `Settings > Pages` 中把 `Source` 设为 `GitHub Actions`
+
 ## 操作
 
 - 桌面：方向键 / WASD 移动，`Z` 或 `U` 撤销（最多 4 步）

@@ -9,6 +9,7 @@
     "dev:clean": "npm run clean && npm run dev",
     "dev:host": "nuxt dev --host 0.0.0.0",
     "build": "nuxt build",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "test": "node scripts/run-checks.mjs",
     "test:levels": "node scripts/run-checks.mjs --levels",

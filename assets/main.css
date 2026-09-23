@@ -138,6 +138,31 @@ button:disabled {
   backdrop-filter: blur(8px);
 }
 
+.site-entry {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.92);
+  box-shadow: var(--btn-shadow);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.site-entry:hover {
+  filter: brightness(1.04);
+}
+
 .locale-chip {
   min-width: 40px;
   height: 34px;
@@ -607,6 +632,13 @@ button:disabled {
     right: 10px;
     gap: 4px;
     padding: 5px;
+  }
+  .site-entry {
+    top: 10px;
+    left: 10px;
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 13px;
   }
   .locale-chip {
     min-width: 34px;
