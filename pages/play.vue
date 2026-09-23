@@ -13,6 +13,7 @@ import { audio } from '~/game/audio/audio'
 
 const route = useRoute()
 const router = useRouter()
+const runtimeConfig = useRuntimeConfig()
 const save = useSave()
 const {
   t,
@@ -73,6 +74,11 @@ const nextMeta = computed(() => localizedLevel(meta.value ? nextLevel(meta.value
 const best = computed(() => (meta.value ? save.value.best[meta.value.id] : undefined))
 const blocked = computed(() => loading.value || !!loadError.value || won.value || showKnowledge.value || showRestart.value)
 
+function publicAssetUrl(path: string) {
+  if (!path.startsWith('/')) return path
+  return `${runtimeConfig.app.baseURL}${path.slice(1)}`
+}
+
 function clearInput() {
   if (inputTimer) clearTimeout(inputTimer)
   inputTimer = null
@@ -125,7 +131,7 @@ async function initLevel() {
     winTimer = null
   }
   try {
-    const response = await fetch(m.file, { signal: loadController.signal })
+    const response = await fetch(publicAssetUrl(m.file), { signal: loadController.signal })
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     const text = await response.text()
     if (disposed || version !== loadVersion) return
