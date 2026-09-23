@@ -56,6 +56,11 @@
   "home": {
     "title": "Glimmer Memory Box\nPet Box Puzzle",
     "subtitle": "Help your little companion push the boxes into the starlight",
+    "installTitle": "Save it to your desktop like a cozy little game app",
+    "installHint": "On supported browsers you can install it to your desktop, launch it from the app icon, and keep the main pages available offline.",
+    "installIosHint": "On phone or tablet, use your browser's share menu to add it to the home screen so you can open it straight from the desktop later.",
+    "installAction": "Install App",
+    "installing": "Preparing…",
     "choosePet": "Choose Your Companion",
     "choosePack": "Choose Difficulty",
     "packProgress": "Cleared {cleared} / {total}",

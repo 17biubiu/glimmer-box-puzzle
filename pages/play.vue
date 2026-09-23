@@ -397,7 +397,7 @@ onBeforeUnmount(() => {
 
     <div class="game-status">
       <span>{{ t('play.status', { stage: localizedMeta?.stage ?? '', placed, total: meta?.boxCount ?? 0 }) }}</span>
-      <span role="status">{{ feedback || t('play.defaultHint') }}</span>
+      <span role="status" :class="{ 'game-status-hint': !feedback }">{{ feedback || t('play.defaultHint') }}</span>
     </div>
     <div class="canvas-wrap">
       <canvas ref="canvasRef" :aria-label="t('play.boardAria')"
@@ -415,10 +415,10 @@ onBeforeUnmount(() => {
           <div class="game-controls-meta-top">
             <LocaleSwitcher inline compact />
             <span class="food-balance">{{ petInfo.foodEmoji }} {{ petInfo.food }} {{ t('common.portions', { count: save.food[save.pet] }) }}</span>
-          </div>
-          <div class="game-controls-meta-bottom">
-            <span class="game-controls-link-label">links:</span>
-            <a class="site-entry-text" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">paw &amp; ever</a>
+            <span class="game-controls-link-group">
+              <span class="game-controls-link-label">links:</span>
+              <a class="site-entry-text" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">paw &amp; ever</a>
+            </span>
           </div>
         </div>
         <div class="dpad" role="group" :aria-label="t('play.dpad')">

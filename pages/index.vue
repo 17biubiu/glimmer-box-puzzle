@@ -50,6 +50,7 @@ onBeforeUnmount(() => {
     <div style="height: 4vh" />
     <h1 class="game-title">{{ t('home.title') }}</h1>
     <p class="subtitle">{{ t('home.subtitle') }}</p>
+    <InstallAppCard />
 
     <h2 class="section-title">{{ t('home.choosePet') }}</h2>
     <div class="card-row pet-row">
@@ -87,8 +88,16 @@ onBeforeUnmount(() => {
       </button>
     </div>
 
-    <p class="footer-brand">
-      <a :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">{{ t('home.siteLink') }}</a>
-    </p>
+    <div class="home-footer-tools" aria-label="home footer tools">
+      <div class="home-footer-links">
+        <span class="home-footer-label">links</span>
+        <a class="site-entry-text" :href="mainSiteUrl" target="_blank" rel="noopener noreferrer">
+          paw &amp; ever
+        </a>
+      </div>
+      <div class="home-footer-locale">
+        <LocaleSwitcher inline compact />
+      </div>
+    </div>
   </div>
 </template>

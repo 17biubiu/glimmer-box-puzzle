@@ -56,6 +56,11 @@
   "home": {
     "title": "微光纪念宝盒\n宠物推箱子",
     "subtitle": "陪小伙伴把宝盒推到星光之处",
+    "installTitle": "保存到桌面，像小游戏 App 一样打开",
+    "installHint": "支持的浏览器可直接安装到桌面，之后能从桌面图标进入，也能离线保留主要页面资源。",
+    "installIosHint": "在手机或平板上，可通过浏览器的分享菜单把它添加到主屏幕，之后就能从桌面直接打开。",
+    "installAction": "安装到桌面",
+    "installing": "准备安装…",
     "choosePet": "选择你的小伙伴",
     "choosePack": "选择难度",
     "packProgress": "已通关 {cleared} / {total}",

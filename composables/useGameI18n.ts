@@ -17,7 +17,11 @@ const LOCALES: { code: AppLocale }[] = [
 ]
 
 export function useGameI18n() {
-  const { t, tm, locale, locales, setLocale } = useI18n()
+  const { t, tm, rt, locale, locales, setLocale } = useI18n()
+
+  function resolveMessage(value: unknown) {
+    return typeof value === 'string' ? value : rt(value as Parameters<typeof rt>[0])
+  }
 
   const localeOptions = computed(() =>
     LOCALES.map((item) => ({
@@ -43,7 +47,13 @@ export function useGameI18n() {
     })),
   )
 
-  const knowledgeEntries = computed(() => tm('knowledge.entries') as KnowledgeEntry[])
+  const knowledgeEntries = computed(() => {
+    const entries = tm('knowledge.entries') as Array<{ title: unknown; text: unknown }>
+    return entries.map((entry) => ({
+      title: resolveMessage(entry.title),
+      text: resolveMessage(entry.text),
+    }))
+  })
 
   function petInfo(kind: PetKind) {
     return localizedPets.value.find((pet) => pet.id === kind) ?? localizedPets.value[0]!

@@ -56,6 +56,11 @@
   "home": {
     "title": "Leuchtende Erinnerungsbox\nHaustier-Boxrätsel",
     "subtitle": "Hilf deinem kleinen Gefährten, die Boxen ins Sternenlicht zu schieben",
+    "installTitle": "Wie eine kleine Spiele-App auf dem Desktop speichern",
+    "installHint": "In unterstützten Browsern kannst du das Spiel auf dem Desktop installieren, über das App-Symbol starten und die wichtigsten Seiten offline behalten.",
+    "installIosHint": "Auf Handy oder Tablet kannst du es über das Teilen-Menü des Browsers zum Home-Bildschirm hinzufügen und später direkt vom Desktop aus öffnen.",
+    "installAction": "App installieren",
+    "installing": "Wird vorbereitet…",
     "choosePet": "Wähle deinen Begleiter",
     "choosePack": "Wähle den Schwierigkeitsgrad",
     "packProgress": "Geschafft {cleared} / {total}",

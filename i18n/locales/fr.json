@@ -56,6 +56,11 @@
   "home": {
     "title": "Boîte Souvenir Étincelante\nPuzzle des Boîtes",
     "subtitle": "Aidez votre petit compagnon à pousser les boîtes jusque dans la lumière des étoiles",
+    "installTitle": "Gardez le jeu sur votre bureau comme une petite app",
+    "installHint": "Sur les navigateurs compatibles, vous pouvez l’installer sur le bureau, l’ouvrir depuis son icône et conserver les pages principales hors ligne.",
+    "installIosHint": "Sur téléphone ou tablette, utilisez le menu de partage du navigateur pour l’ajouter à l’écran d’accueil et l’ouvrir ensuite directement depuis le bureau.",
+    "installAction": "Installer l’app",
+    "installing": "Préparation…",
     "choosePet": "Choisissez votre compagnon",
     "choosePack": "Choisissez la difficulté",
     "packProgress": "Terminé {cleared} / {total}",

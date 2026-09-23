@@ -251,6 +251,43 @@ button:disabled {
   text-align: center;
 }
 
+.install-card {
+  width: min(100%, 720px);
+  margin-top: 18px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 250, 240, 0.96), rgba(255, 241, 214, 0.94));
+  box-shadow: var(--btn-shadow);
+}
+
+.install-card-copy {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.install-card-title {
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.install-card-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #675b6d;
+}
+
+.install-card-btn {
+  min-width: 132px;
+  flex-shrink: 0;
+}
+
 .section-title {
   margin: 26px 0 12px;
   font-size: 19px;
@@ -490,22 +527,23 @@ button:disabled {
 }
 .game-controls-meta {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
+  align-items: center;
   min-width: 0;
+  flex: 1 1 320px;
 }
 .game-controls-meta-top {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+  width: 100%;
 }
-.game-controls-meta-bottom {
+.game-controls-link-group {
   display: inline-flex;
   align-items: center;
+  justify-self: end;
   gap: 6px;
-  flex-wrap: wrap;
+  min-width: max-content;
 }
 .game-controls-link-label {
   color: #7d6f88;
@@ -513,7 +551,12 @@ button:disabled {
   font-weight: 700;
   text-transform: lowercase;
 }
-.food-balance { font-size: 13px; font-weight: 700; line-height: 1.6; }
+.food-balance {
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+}
 .locale-select {
   min-width: 58px;
   height: 28px;
@@ -708,6 +751,40 @@ button:disabled {
   text-shadow: 0 1px 0 rgba(64, 54, 74, 0.4);
 }
 
+.home-footer-tools {
+  width: min(100%, 720px);
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 2px solid rgba(64, 54, 74, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 250, 240, 0.72);
+}
+
+.home-footer-links {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home-footer-label {
+  color: #7d6f88;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.home-footer-locale {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
 .loading-tip {
   position: absolute;
   inset: 0;
@@ -729,6 +806,7 @@ button:disabled {
   .hud-actions .btn-sm { padding: 5px 8px; font-size: 12px; }
   .hud-stat { font-size: 12px; padding: 4px 8px; }
   .game-status { padding: 5px 10px; font-size: 11px; }
+  .game-status-hint { display: none; }
   .game-controls { gap: 10px; }
   .game-controls-main {
     flex-direction: column;
@@ -738,11 +816,10 @@ button:disabled {
   .game-controls-meta {
     order: 2;
     width: 100%;
-    align-items: flex-start;
-    gap: 4px;
+    align-items: stretch;
   }
   .game-controls-meta-top { gap: 8px; }
-  .game-controls-meta-bottom { gap: 5px; }
+  .game-controls-link-group { gap: 5px; }
   .game-controls-link-label { font-size: 10px; }
   .site-entry-text { font-size: 11px; }
   .locale-select { min-width: 52px; height: 26px; padding-inline: 7px 22px; }
@@ -778,6 +855,31 @@ button:disabled {
     min-width: 34px;
     height: 30px;
     font-size: 11px;
+  }
+  .install-card {
+    margin-top: 16px;
+    padding: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .install-card-title { font-size: 16px; }
+  .install-card-text { font-size: 12px; }
+  .install-card-btn {
+    width: 100%;
+    min-width: 0;
+  }
+  .home-footer-tools {
+    width: min(100%, 340px);
+    margin-top: 24px;
+    padding: 8px 10px;
+    gap: 10px;
+  }
+  .home-footer-links {
+    gap: 5px;
+  }
+  .home-footer-label {
+    font-size: 10px;
   }
 }
 @media (max-height: 540px) and (min-width: 600px) {
